@@ -13,10 +13,4 @@ public class UserResponse {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public UserResponse(String userId, String username, String email, String password) {
-        this.userId = userId;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
 }
