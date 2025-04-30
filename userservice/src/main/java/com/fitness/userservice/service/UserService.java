@@ -35,7 +35,6 @@ public class UserService {
     public UserResponse getUserProfile(String userId) {
         // Logic to get user profile by userId
         User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
-
         return getUserResponse(user);
     }
 

@@ -12,11 +12,11 @@ public class UserRequest {
     @Email(message = "Email should be valid")
     private String email;
 
-    @NotBlank(message = "Username is required")
-    @Size(min = 6, max = 20, message = "password should be between 6 and 20 characters")
-    private String password;
-
     @NotBlank(message = "username is required")
     private String username;
+
+    @NotBlank(message = "password is required")
+    @Size(min = 6, max = 20, message = "password should be between 6 and 20 characters")
+    private String password;
 
 }
