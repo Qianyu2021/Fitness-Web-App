@@ -22,7 +22,6 @@ public class Activity {
 
     @Id  // Marks this field as the document's primary key in MongoDB@Id  // Marks this field as the document's primary key in MongoDB@Id  // Marks this field as the document's primary key in MongoDB
     private String id;
-
     private String userId;
     private ActivityType activityType;
     private Integer caloriesBurned;

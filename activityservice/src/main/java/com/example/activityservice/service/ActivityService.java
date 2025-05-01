@@ -7,6 +7,8 @@ import com.example.activityservice.model.Activity;
 import com.example.activityservice.repository.ActivityRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor //only if you are generating final constructor
@@ -44,6 +46,28 @@ public class ActivityService {
         activityResponse.setAdditionalMetrics(savedActivity.getAdditionalMetrics());
         activityResponse.setUpdatedAt(savedActivity.getUpdatedAt());
         return activityResponse;
+    }
+
+    public List<ActivityResponse> getUserActivities(String userId) {
+        // Logic to get user activities
+        List<Activity> activities = activityRepository.findByUserId(userId);
+        return activities.stream()
+                .map(this::savedActivityToResponse)
+                .collect(Collectors.toList());
+    }
+
+    public ActivityResponse getActivityById(String activityId) {
+        // Logic to get activity by ID
+        Activity activity = activityRepository.findById(activityId)
+                .orElseThrow(() -> new RuntimeException("Activity not found"));
+        return savedActivityToResponse(activity);
+    }
+
+    public ActivityResponse getActivityByActivityId(String activityId) {
+        // Logic to get activity by activity type
+        Activity activity = activityRepository.findById(activityId)
+                .orElseThrow(() -> new RuntimeException("Activity not found"));
+        return savedActivityToResponse(activity);
     }
 
 }

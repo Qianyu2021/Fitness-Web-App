@@ -1,6 +1,6 @@
 spring:
   application:
-    name: userservice
+    name: user-service
   datasource:
     url: jdbc:postgresql://localhost:5434/fitness_user_db
     username: postgres_fitness
@@ -14,3 +14,8 @@ spring:
 
 server:
   port: 8082
+
+eureka:
+    client:
+        service-url:
+          defaultZone: http://localhost:8761/eureka/
