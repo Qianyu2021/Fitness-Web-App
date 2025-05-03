@@ -45,8 +45,7 @@ public class ActivityController {
     @GetMapping("/activityType/{activityId}")
     public ResponseEntity<ActivityResponse> getActivityByActivityId(@PathVariable String activityId) {
         //this is to get the activity by activity type
-        return ResponseEntity.ok(activityService.getActivityByActivityId(activityId));
+        return ResponseEntity.ok(activityService.getActivityById(activityId));
     }
-
 
 }

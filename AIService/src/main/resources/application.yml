@@ -1,0 +1,16 @@
+# AIService application configuration file
+spring:
+  application:
+    name: AI-Service
+  data:
+    mongodb:
+      uri: mongodb+srv://password_mongo:password_mongo@cluster0.msveuwi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: fitness_activity
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+    port: 8084

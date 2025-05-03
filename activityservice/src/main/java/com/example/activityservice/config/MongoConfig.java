@@ -14,6 +14,5 @@ public class MongoConfig {
     // For now, it is empty and serves as a marker for MongoDB configuration.
     // You can also use application.properties or application.yml for basic MongoDB configuration.
 
-    // Example:
 
 }

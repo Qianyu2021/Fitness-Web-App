@@ -15,9 +15,14 @@ import java.util.stream.Collectors;
 public class ActivityService {
 
     private final ActivityRepository activityRepository;
+    private final UserValidationService userValidationService;
     public ActivityResponse trackActivity(ActivityRequest activityRequest) {
         // Logic to track activity
         // For now, just return the request as a response
+        boolean isValidUser = userValidationService.validateUser(activityRequest.getUserId());
+        if(!isValidUser) {
+            throw new RuntimeException("Invalid user ID: " + activityRequest.getUserId());
+        }
         Activity activity = Activity.builder()
                 .userId(activityRequest.getUserId())
                 .activityType(activityRequest.getActivityType())
@@ -58,13 +63,6 @@ public class ActivityService {
 
     public ActivityResponse getActivityById(String activityId) {
         // Logic to get activity by ID
-        Activity activity = activityRepository.findById(activityId)
-                .orElseThrow(() -> new RuntimeException("Activity not found"));
-        return savedActivityToResponse(activity);
-    }
-
-    public ActivityResponse getActivityByActivityId(String activityId) {
-        // Logic to get activity by activity type
         Activity activity = activityRepository.findById(activityId)
                 .orElseThrow(() -> new RuntimeException("Activity not found"));
         return savedActivityToResponse(activity);

@@ -19,3 +19,9 @@ eureka:
     client:
         service-url:
           defaultZone: http://localhost:8761/eureka/
+
+logging:
+    level:
+      org.springframework.web: DEBUG
+      org.hibernate.SQL: DEBUG
+      com.your.package: DEBUG
