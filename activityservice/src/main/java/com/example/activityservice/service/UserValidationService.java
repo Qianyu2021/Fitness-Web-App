@@ -12,7 +12,7 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 @RequiredArgsConstructor
 @Slf4j
 public class UserValidationService {
-    @Autowired
+
     private final WebClient userServiceWebClient;
 
     public boolean validateUser(String userId) {

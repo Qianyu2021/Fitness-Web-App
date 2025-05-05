@@ -6,6 +6,11 @@ spring:
     mongodb:
       uri: mongodb+srv://password_mongo:password_mongo@cluster0.msveuwi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
       database: fitness_activity
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:
@@ -14,3 +19,12 @@ eureka:
 
 server:
     port: 8084
+
+
+rabbitmq:
+  exchange:
+    name: activity-exchange
+  queue:
+    name: activity-queue
+  routing:
+    key: activity-tracking
