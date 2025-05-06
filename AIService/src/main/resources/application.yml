@@ -20,7 +20,6 @@ eureka:
 server:
     port: 8084
 
-
 rabbitmq:
   exchange:
     name: activity-exchange
@@ -28,3 +27,8 @@ rabbitmq:
     name: activity-queue
   routing:
     key: activity-tracking
+
+gemini:
+  api:
+    url: ${GEMINI_API_URL:https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent}
+    key: ${GEMINI_API_KEY}

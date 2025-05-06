@@ -81,6 +81,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-resolver-dns-native-macos</artifactId>
+			<version>4.1.96.Final</version> <!-- Match your Netty version -->
+			<classifier>osx-aarch_64</classifier> <!-- For Apple Silicon (M1/M2) -->
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -98,6 +104,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
