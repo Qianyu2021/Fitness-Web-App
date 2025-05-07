@@ -25,12 +25,13 @@ public class Recommendation {
     private String userId;
 
     private String activityId;
+    private Integer duration;
     private String recommendation;
     private String activityType;
     private String activityName;
-
+    private String reason;
     @CreatedDate
     private LocalDateTime createdAt;
 
-    private List<String> suggestions;
+    private List<Recommendation> suggestions;
 }
